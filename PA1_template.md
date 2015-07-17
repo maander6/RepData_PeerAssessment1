@@ -1,5 +1,5 @@
 # Reproducible Research: Peer Assessment 1
-##Submitted by maander6, Thu Jul 16 19:45:03 2015
+##Submitted by maander6, Thu Jul 16 21:51:59 2015
 Data  (activity.csv) for this analysis is provided by the Reproducible Research 
 Coursera Course Instructors.  It is placed in the working directory for the 
 analysis.
@@ -196,7 +196,24 @@ there are differences in the activity pattern for weekdays and weekend days.
 
 
 ```r
+## subset the data by day of week, then add a column identifying weekend 
+## or weekday
   weekday <- subset(data1, data1$dayofweek != c("Saturday", "Sunday"))
+  weekday <- mutate(weekday, DorE="weekday")
   weekend <- subset(data1, data1$dayofweek == c("Saturday", "Sunday"))
+  weekend <- mutate(weekend, DorE="weekend")
+## recombine the weekend and weekday data into a single table, and group the
+## data by weekend/weekday then by interval
+  data2 <- arrange(rbind(weekday, weekend), date, interval)
+  data2 <- data2 %>% group_by(DorE, interval) %>% summarize(avg=mean(steps))
 ```
+
+
+```r
+  ggplot(data2, aes(x=interval, y=avg)) + 
+        geom_line() + 
+        facet_grid(DorE ~ .)
+```
+
+![](./PA1_template_files/figure-html/unnamed-chunk-8-1.png) 
 

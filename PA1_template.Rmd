@@ -142,7 +142,21 @@ This allows one to compare the daily activity at 5-minute intervals to see if
 there are differences in the activity pattern for weekdays and weekend days.
 
 ```{R}
+## subset the data by day of week, then add a column identifying weekend 
+## or weekday
   weekday <- subset(data1, data1$dayofweek != c("Saturday", "Sunday"))
+  weekday <- mutate(weekday, DorE="weekday")
   weekend <- subset(data1, data1$dayofweek == c("Saturday", "Sunday"))
+  weekend <- mutate(weekend, DorE="weekend")
+## recombine the weekend and weekday data into a single table, and group the
+## data by weekend/weekday then by interval
+  data2 <- arrange(rbind(weekday, weekend), date, interval)
+  data2 <- data2 %>% group_by(DorE, interval) %>% summarize(avg=mean(steps))
+```
+
+```{R}
+  ggplot(data2, aes(x=interval, y=avg)) + 
+        geom_line() + 
+        facet_grid(DorE ~ .)
 ```
 
