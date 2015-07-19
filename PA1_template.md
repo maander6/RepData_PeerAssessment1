@@ -1,5 +1,5 @@
 # Reproducible Research: Peer Assessment 1
-##Submitted by maander6, Sat Jul 18 20:00:37 2015
+##Submitted by maander6, Sat Jul 18 20:06:31 2015
 Data  (activity.csv) for this analysis is provided by the Reproducible Research 
 Coursera Course Instructors.  It is placed in the working directory for the 
 analysis.
