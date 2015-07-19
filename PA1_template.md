@@ -1,5 +1,5 @@
 # Reproducible Research: Peer Assessment 1
-##Submitted by maander6, Sat Jul 18 20:12:36 2015
+##Submitted by maander6, Sat Jul 18 20:20:35 2015
 Data  (activity.csv) for this analysis is provided by the Reproducible Research 
 Coursera Course Instructors.  It is placed in the working directory for the 
 analysis.
@@ -179,7 +179,7 @@ There are 2304 missing values in the activity data set.
 ```
 
 After imputing the data set to add values where NA had previously been reported,
-it is found that the average daily activity is 11576.66, and the median 
+it is found that the mean daily activity is 11576.66, and the median 
 daily activity is 11458.  Not unexpectedly, since we added steps to
 to the activity data set, the average daily activity increased by 810.4671,
 and the median daily activity increased by 693.

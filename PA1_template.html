@@ -55,8 +55,8 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 </div>
 
 
-<div id="submitted-by-maander6-sat-jul-18-201236-2015" class="section level2">
-<h2>Submitted by maander6, Sat Jul 18 20:12:36 2015</h2>
+<div id="submitted-by-maander6-sat-jul-18-202035-2015" class="section level2">
+<h2>Submitted by maander6, Sat Jul 18 20:20:35 2015</h2>
 <p>Data (activity.csv) for this analysis is provided by the Reproducible Research Coursera Course Instructors. It is placed in the working directory for the analysis.</p>
 </div>
 <div id="loading-and-preprocessing-the-data" class="section level2">
@@ -159,7 +159,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <pre class="r"><code>  avg.step.cor &lt;- data1 %&gt;% group_by(date) %&gt;% summarize(total=sum(steps))
   avg1 &lt;- mean(avg.step.cor$total)
   mdn1 &lt;- median(avg.step.cor$total)</code></pre>
-<p>After imputing the data set to add values where NA had previously been reported, it is found that the average daily activity is 11576.66, and the median daily activity is 11458. Not unexpectedly, since we added steps to to the activity data set, the average daily activity increased by 810.4671, and the median daily activity increased by 693.</p>
+<p>After imputing the data set to add values where NA had previously been reported, it is found that the mean daily activity is 11576.66, and the median daily activity is 11458. Not unexpectedly, since we added steps to to the activity data set, the average daily activity increased by 810.4671, and the median daily activity increased by 693.</p>
 <pre class="r"><code>  qplot(avg.step.cor$total, binwidth=1000) + 
           geom_vline(xintercept=avg1, color=&quot;green&quot;) +
           geom_vline(xintercept=mdn1, color=&quot;red&quot;) +

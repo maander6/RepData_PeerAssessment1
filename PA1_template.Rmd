@@ -129,7 +129,7 @@ There are `r missing` missing values in the activity data set.
 ```
 
 After imputing the data set to add values where NA had previously been reported,
-it is found that the average daily activity is `r format(avg1, nsmall=2)`, and the median 
+it is found that the mean daily activity is `r format(avg1, nsmall=2)`, and the median 
 daily activity is `r format(mdn1, digits=2)`.  Not unexpectedly, since we added steps to
 to the activity data set, the average daily activity increased by `r format((avg1-avg), nsmall=2)`,
 and the median daily activity increased by `r format((mdn1-mdn), digits=2)`.
