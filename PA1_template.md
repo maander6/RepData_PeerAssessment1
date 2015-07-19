@@ -1,5 +1,5 @@
 # Reproducible Research: Peer Assessment 1
-##Submitted by maander6, Sat Jul 18 20:06:31 2015
+##Submitted by maander6, Sat Jul 18 20:12:36 2015
 Data  (activity.csv) for this analysis is provided by the Reproducible Research 
 Coursera Course Instructors.  It is placed in the working directory for the 
 analysis.
@@ -234,7 +234,9 @@ there are differences in the activity pattern for weekdays and weekend days.
 ## weekdays, and (2) weekends
   ggplot(data2, aes(x=interval, y=avg)) + 
         geom_line() + 
-        facet_grid(DorE ~ .)
+        facet_grid(DorE ~ .) +
+        xlab("Interval, minutes") +
+        ylab("Average Number of Steps")
 ```
 
 ![](./PA1_template_files/figure-html/Line_plot_comparison-1.png) 

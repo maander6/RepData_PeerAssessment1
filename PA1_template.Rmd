@@ -179,7 +179,9 @@ there are differences in the activity pattern for weekdays and weekend days.
 ## weekdays, and (2) weekends
   ggplot(data2, aes(x=interval, y=avg)) + 
         geom_line() + 
-        facet_grid(DorE ~ .)
+        facet_grid(DorE ~ .) +
+        xlab("Interval, minutes") +
+        ylab("Average Number of Steps")
 ```
 
 Clearly there is a difference in the activity pattern depending on whether the
